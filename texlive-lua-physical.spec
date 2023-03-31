@@ -1,6 +1,6 @@
 Name:		texlive-lua-physical
 Version:	59138
-Release:	1
+Release:	2
 Summary:	Functions and objects for the computation of physical quantities
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/lua-physical
