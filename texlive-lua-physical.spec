@@ -3,7 +3,7 @@ Version:	59138
 Release:	2
 Summary:	Functions and objects for the computation of physical quantities
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/lua-physical
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/lua-physical
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-physical.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-physical.doc.r%{version}.tar.xz
