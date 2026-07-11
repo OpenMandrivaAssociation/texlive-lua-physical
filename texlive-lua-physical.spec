@@ -1,39 +1,24 @@
-Name:		texlive-lua-physical
-Version:	59138
-Release:	2
+%global tl_name lua-physical
+%global tl_revision 59138
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0.5
+Release:	%{tl_revision}.1
 Summary:	Functions and objects for the computation of physical quantities
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/lua-physical
+URL:		https://www.ctan.org/tex-archive/macros/luatex/latex/lua-physical
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-physical.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-physical.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-physical.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-physical.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This is a pure Lua library, which provides functions and
-objects for the computation of physical quantities. The package
-provides units of the SI and the imperial system. In order to
-display the numbers with measurement uncertainties, the package
-is able to perform Gaussian error propagation.
+This is a pure Lua library, which provides functions and objects for the
+computation of physical quantities. The package provides units of the SI
+and the imperial system. In order to display the numbers with
+measurement uncertainties, the package is able to perform Gaussian error
+propagation.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/scripts/lua-physical
-%doc %{_texmfdistdir}/doc/lualatex/lua-physical
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
